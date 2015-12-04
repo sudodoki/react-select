@@ -190,7 +190,8 @@ const Select = React.createClass({
 	},
 
 	handleInputBlur (event) {
-		if (document.activeElement.isEqualNode(this.refs.menu)) {
+		var menuDOM = ReactDOM.findDOMNode(this.refs.menu);
+		if (document.activeElement.isEqualNode(menuDOM)) {
 			return;
 		}
 		if (this.props.onBlur) {
